@@ -39,10 +39,15 @@ $(function () {
         const toUser = $("select#kudo-to option:checked").text();
         const fromUser = $("select#kudo-from option:checked").text();
 
-        $.post(`/api/kudo`, { title: kudoTitle, body: kudoBody, userId: userId, toUser: toUser, fromUser: fromUser }, getKudos());
-        $('#kudo-title').val('')
-        $('#kudo-body').val('')
-        $('#kudoModal').modal('hide');
+        if (toUser != fromUser) {
+            $.post(`/api/kudo`, { title: kudoTitle, body: kudoBody, userId: userId, toUser: toUser, fromUser: fromUser }, getKudos());
+            $('#kudo-title').val('')
+            $('#kudo-body').val('')
+            $('#kudoModal').modal('hide');
+        }
+        else {
+            alert("Please send your Kudos to someone different (not the same person).")
+        }
     }
     $('.btn-primary').on('click', createKudo);
 

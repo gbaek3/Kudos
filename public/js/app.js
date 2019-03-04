@@ -32,14 +32,13 @@ $(function () {
 
     const createKudo = function (e) {
         e.preventDefault();
-        console.log("hello");
         const userId = $('#kudo-to').val();
         const kudoTitle = $('#kudo-title').val().trim();
         const kudoBody = $('#kudo-body').val().trim();
         const toUser = $("select#kudo-to option:checked").text();
         const fromUser = $("select#kudo-from option:checked").text();
 
-        if (toUser != fromUser) {
+        if ($('#kudo-to').val() != null && $('#kudo-to').val() != null && toUser != fromUser) {
             $.post(`/api/kudo`, { title: kudoTitle, body: kudoBody, userId: userId, toUser: toUser, fromUser: fromUser }, getKudos());
             $('#kudo-title').val('')
             $('#kudo-body').val('')

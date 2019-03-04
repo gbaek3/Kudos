@@ -1,0 +1,17 @@
+.card{
+    text-align:center;
+}
+
+h4 {
+    color:cadetblue;
+}
+
+h5 {
+    font-weight: bold;
+}
+
+p{
+    font-style: italic;
+    color:forestgreen;
+
+}

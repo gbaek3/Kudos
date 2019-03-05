@@ -47,9 +47,10 @@ $(function () {
         else {
             alert("Please send your Kudos to someone different (not the same person).")
         }
+        getKudos();
     }
     $('.btn-primary').on('click', createKudo);
 
     getUsers();
-    getKudos()
+    getKudos();
 });
